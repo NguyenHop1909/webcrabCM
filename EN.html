@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="/IMG/concuanho.png" type="image/x-icon">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="/styles.css">
+
+    <title>Crab Store - Fresh Ca Mau</title>
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="/IMG/concuanho.png" alt="logo image">
+                Crab Store
+            </a>
+
+            <!-- LANGUAGE SWITCHING BUTTONS -->
+            <div class="lang-buttons">
+                <button class="lang-button" onclick="window.location.href='/EN.html';">
+                    <img src="/IMG/en-US.gif" alt="English Flag">
+                </button>
+
+                <button class="lang-button" onclick="window.location.href='/VN.html';">
+                    <img src="/IMG/vi-VN.gif" alt="Vietnamese Flag">
+                </button>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">Home</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">About</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#popular" class="nav__link">Popular</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#products" class="nav__link">Products</a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#recently" class="nav__link">Recently</a>
+                    </li>
+                </ul>
+
+                <!-- Close button -->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+
+                <img src="/IMG/leaf-branch-4.png" alt="nav image" class="nav__img-1">
+                <img src="/IMG/leaf-branch-3.png" alt="nav image" class="nav__img-2">
+            </div>
+
+            <div class="nav__buttons">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-apps-2-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <img src="/IMG/image.png" alt="home image" class="home__img">
+
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Welcome to Crab Store
+
+                        <div>
+                            <img src="/IMG/concuanho.png" alt="home image">
+                            Crab Food
+                        </div>
+                    </h1>
+
+                    <p class="home__description">
+                        Experience the wonderful taste of fresh, high-quality Ca Mau crabs.
+                    </p>
+
+                    <a href="#products" class="button">Order Now <i class="ri-arrow-right-line"></i></a>
+
+                </div>
+            </div>
+
+            <img src="/IMG/leaf-branch-2.png" alt="home image" class="home__leaf-1">
+            <img src="/IMG/leaf-branch-4.png" alt="home image" class="home__leaf-2">
+        </section>
+
+        <!--==================== ABOUT ====================-->
+        <section class="about section" id="about">
+            <div class="about__container container grid">
+                <div class="about__data">
+                    <span class="section__subtitle">About Us</span>
+
+                    <h2 class="section__title about__title">
+                        <div>
+                            We Provice
+                            <img src="/IMG/concuanho.png" alt="about image">
+                        </div>
+
+                        The types of crabs are diverse and abundant.
+                    </h2>
+
+                    <p class="about__description">
+                        Ca Mau crabs are renowned for their firm, sweet, and nutritious meat. We are committed to
+                        providing the freshest crabs, meticulously transported and stored to preserve their distinctive
+                        flavor.
+                    </p>
+                </div>
+
+                <!-- <img src="/IMG/about-sushi.png" alt="about image" class="about__img"> -->
+            </div>
+
+            <img src="/IMG/leaf-branch-1.png" alt="about image" class="about__leaf">
+        </section>
+
+        <!--==================== POPULAR ====================-->
+        <section class="popular section" id="popular">
+            <span class="section__subtitle">
+                <h2 class="section__title">Popular Types Of Crabs</h2>
+
+                <div class="popular__container container grid">
+                    <article class="popular__card">
+                        <img src="/IMG/cuathit.jpg" alt="popular image" class="popular__img">
+
+                        <h3 class="popular__name">Crab Meat (including Y crabs, Square-abdomen crabs, and Xo crabs.)
+                        </h3>
+
+
+                        <h3 class="popular__type">Type: 3 crabs per kilogram</h3>
+
+                        <h3 class="popular__weight">3 crabs/kg</h3>
+                        <span class="popular__description">Y crabs always have large claws, a beautiful shape, and a
+                            long Y-shaped abdomen. The largest ones can weigh over 700 grams, with firm meat that tastes
+                            sweet and delicious.</span>
+
+                        <span class="popular__price">$10</span>
+
+                        <a href="#products" class="button">Order Now <i class="ri-arrow-right-line"></i></a>
+
+                    </article>
+
+                    <article class="popular__card">
+                        <img src="/IMG/cuacom.jpg" alt="popular image" class="popular__img">
+
+                        <h3 class="popular__name">Crab Com (2 skins)</h3>
+
+                        <h3 class="popular__type">Type: 3 crabs per kilogram</h3>
+
+                        <h3 class="popular__weight">3 crabs/kg</h3>
+                        <span class="popular__description">Cốm crabs have thin shells and a pinkish body. When looking
+                            inside the abdomen, you can see pinkish-red fibers, and the crab roe is abundant and
+                            golden.</span>
+
+                        <span class="popular__price">$40</span>
+
+                        <a href="#products" class="button">Order Now <i class="ri-arrow-right-line"></i></a>
+
+                    </article>
+
+                    <article class="popular__card">
+                        <img src="/IMG/cuagach.jpg" alt="popular image" class="popular__img">
+
+                        <h3 class="popular__name">Crab Gạch</h3>
+
+                        <h3 class="popular__type">Type: 3 crabs per kilogram</h3>
+
+                        <h3 class="popular__weight">3 crabs/kg</h3>
+                        <span class="popular__description">Gạch crabs have very large abdomens, which are almost
+                            rectangular in shape, and they contain a lot of crab fat.</span>
+
+                        <span class="popular__price">$100</span>
+
+                        <a href="#products" class="button">Order Now <i class="ri-arrow-right-line"></i></a>
+                    </article>
+
+                </div>
+            </span>
+        </section>
+
+
+        <!--==================== PRODUCTS ====================-->
+        <section class="products section" id="products">
+            <span class="section__subtitle">
+                <h2 class="section__title">Our Products</h2>
+
+                <div class="products__container container grid">
+                    <article class="products__card">
+                        <img src="/IMG/cuathit.jpg" alt="products image" class="products__img">
+
+                        <h3 class="products__name">Crab Y(Crab Meat)
+                        </h3>
+
+                        <h3 class="products__type">Type: 3 crabs per kilogram</h3>
+
+                        <h3 class="products__weight">3 crabs/kg</h3>
+
+                        <span class="products__description">Y crabs always have large claws, a beautiful shape, and a
+                            long Y-shaped abdomen. The largest ones can weigh over 700 grams, with firm meat that tastes
+                            sweet and delicious.</span>
+
+                        <span class="products__price">$10</span>
+
+                        <button class="products__button" data-name="Crab Meat" data-price="10">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+
+                    </article>
+
+
+                    <article class="products__card">
+                        <img src="/IMG/cuacom.jpg" alt="products image" class="products__img">
+
+                        <h3 class="products__name">Crab Com (2 skins)</h3>
+                        <h3 class="products__type">Type: 3 crabs per kilogram</h3>
+                        <h3 class="products__weight">3 crabs/kg</h3>
+                        <span class="products__description">Cốm crabs have thin shells and a pinkish body. When looking
+                            inside the abdomen, you can see pinkish-red fibers, and the crab roe is abundant and
+                            golden.</span>
+
+                        <span class="products__price">$40</span>
+
+                        <button class="products__button" data-name="Crab Com" data-price="40">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+
+                    </article>
+
+                    <article class="products__card">
+                        <img src="/IMG/cuagach.jpg" alt="products image" class="products__img">
+
+                        <h3 class="products__name">Crab Gạch</h3>
+                        <h3 class="products__type">Type: 3 crabs per kilogram</h3>
+                        <h3 class="products__weight">3 crabs/kg</h3>
+                        <span class="products__description">Gạch crabs have very large abdomens, which are almost
+                            rectangular in shape, and they contain a lot of crab fat.</span>
+
+                        <span class="products__price">$100</span>
+
+                        <button class="products__button" data-name="Crab Gạch" data-price="100">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                    </article>
+
+                    <article class="products__card">
+                        <img src="/IMG/cuathit.jpg" alt="products image" class="products__img">
+
+                        <h3 class="products__name">Crab Y(Crab Meat)
+                        </h3>
+
+                        <h3 class="products__type">Type: 5 crabs per kilogram</h3>
+                        <h3 class="products__weight">5 crabs/kg</h3>
+                        <span class="products__description">Y crabs always have large claws, a beautiful shape, and a
+                            long Y-shaped abdomen. The largest ones can weigh over 700 grams, with firm meat that tastes
+                            sweet and delicious.</span>
+
+                        <span class="products__price">$10</span>
+
+                        <button class="products__button" data-name="Crab Meat" data-price="10">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                    </article>
+
+                    <article class="products__card">
+                        <img src="/IMG/cuagach.jpg" alt="products image" class="products__img">
+
+                        <h3 class="products__name">Crab Gạch</h3>
+                        <h3 class="products__type">Type: 5 crabs per kilogram</h3>
+                        <h3 class="products__weight">5 crabs/kg</h3>
+                        <span class="products__description">Gạch crabs have very large abdomens, which are almost
+                            rectangular in shape, and they contain a lot of crab fat.</span>
+
+                        <span class="products__price">$100</span>
+
+                        <button class="products__button" data-name="Crab Gạch" data-price="100">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                    </article>
+
+                </div>
+            </span>
+        </section>
+        <!--==================== RECENTLY ====================-->
+        <section class="recently section" id="recently">
+            <div class="recently__container container grid">
+                <div class="recently__data">
+                    <span class="section__subtitle">Recently Added</span>
+                    <h2 class="section__title">
+                        Meat Crabs <br>
+                        3 crabs over 1 kg
+                    </h2>
+
+                    <p class="recently__description">
+                        The meat is firm, sweet, delicious.
+                    </p>
+
+                    <a href="#products" class="button">
+                        Order Now <i class="ri-arrow-right-line"></i>
+                    </a>
+
+                    <img src="/IMG/spinach-leaf.png" alt="recently image" class="recently__data-img">
+                </div>
+
+                <img src="/IMG/snapedit_1721207517867.png" alt="recently image" class="recently__img">
+            </div>
+
+            <img src="/IMG/leaf-branch-2.png" alt="recently image" class="reently__leaf-1">
+            <img src="/IMG/leaf-branch-3.png" alt="recently image" class="reently__leaf-2">
+        </section>
+
+        <!--==================== NEWSLETTER ====================-->
+        <!-- <section class="newsletter section">
+            <div class="newsletter__container container">
+                <div class="newsletter__content grid">
+                    <img src="/IMG/newsletter-sushi.png" alt="newsletter image" class="newsletter__img">
+
+                    <div class="newsletter__data">
+                        <span class="section__subtitle">Newsletter</span>
+                        <h2 class="section__title">
+                            Subscribe For <br>
+                            Updates
+                        </h2>
+
+                        <form action="" class="newsletter__form">
+                            <input type="email" placeholder="Enter email" class="newsletter__input">
+                            <button class="button newsletter__button">
+                                Subscribe <i class="ri-send-plane-line"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <img src="/IMG/spinach-leaf.png" alt="newsletter image" class="newsletter__spinach">
+            </div>
+        </section> -->
+    </main>
+
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__container container grid">
+
+            <div class="footer__content">
+                <!-- <div>
+                    <h3 class="footer__title">Main Menu</h3>
+
+                    <ul class="footer_links">
+                        <li>
+                            <a href="#" class="footer_link">About</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Menu</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Offers</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Events</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">Information</h3>
+
+                    <ul class="footer_links">
+                        <li>
+                            <a href="#" class="footer_link">Contact</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Order & Returns</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Videos</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Reservation</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">Address</h3>
+
+                    <ul class="footer_links">
+                        <li class="footer__information">
+                            dien dia chi vao <br>
+                            thanh pho ...
+                        </li>
+
+                        <li class="footer__information">
+                            9AM - 11PM
+                        </li>
+                    </ul>
+                </div> -->
+
+                <div>
+                    <h3 class="footer__title">Social Media</h3>
+
+                    <ul class="footer_social">
+                        <a href="https://www.facebook.com/hopnguyen2001/" target="_blank" class="footer__social-link">
+                            <i class="ri-facebook-circle-fill"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/hop1567/" target="_blank" class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/hop-nguyen-906833244/" target="_blank"
+                            class="footer__social-link">
+                            <i class="ri-linkedin-box-fill"></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <!-- <img src="/IMG/spring-onion.png" alt="footer image" class="footer__onion"> -->
+            <!-- <img src="/IMG/spinach-leaf.png" alt="footer image" class="footer__spinach"> -->
+            <img src="/IMG/leaf-branch-4.png" alt="footer image" class="footer__leaf">
+        </div>
+
+        <div class="footer__info container">
+            <span class="footer__copy">
+                &#169; Copyright HOP
+            </span>
+        </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line"></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="/scrollreveal.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="/main.js"></script>
+
+</body>
+
+</html>
