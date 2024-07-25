@@ -123,7 +123,7 @@ body.dark-theme{
   box-shadow: 0 8px 20px hsla(19, 64%, 4%, .2);
 }
 
-.dark-theme .newsletter__content{
+.dark-theme .cart{
   background-color: var(--container-color);
 }
 
