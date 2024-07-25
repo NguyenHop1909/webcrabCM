@@ -1523,6 +1523,7 @@ body.dark-theme{
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: red;
 }
 
 .cart {
