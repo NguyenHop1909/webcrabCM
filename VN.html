@@ -48,6 +48,10 @@
                     </li>
 
                     <li class="nav__item">
+                        <a href="#popular" class="nav__link">Phổ Biến</a>
+                    </li>
+
+                    <li class="nav__item">
                         <a href="#products" class="nav__link">Sản Phẩm</a>
                     </li>
 
@@ -68,6 +72,13 @@
             <div class="nav__buttons">
                 <!-- Theme change button -->
                 <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                <!-- Cart icon -->
+                <div class="cart-icon" id="cart-icon">
+                    <i class="ri-shopping-cart-line"></i>
+                    <span id="cart-count" class="cart-count">0</span>
+                </div>
+
 
                 <!-- Toggle button -->
                 <div class="nav__toggle" id="nav-toggle">
@@ -135,8 +146,8 @@
             <img src="/IMG/leaf-branch-1.png" alt="about image" class="about__leaf">
         </section>
 
-        <!--==================== PRODUCTS ====================-->
-        <section class="popular section" id="products">
+        <!--==================== POPULAR ====================-->
+        <section class="popular section" id="popular">
             <span class="section__subtitle">
                 <h2 class="section__title">Những Loại Cua Phổ Biến</h2>
 
@@ -144,13 +155,13 @@
                     <article class="popular__card">
                         <img src="/IMG/cuathit.jpg" alt="popular image" class="popular__img">
 
-                        <h3 class="popular__name">Cua Thịt (bao gồm cua Y, cua Yếm vuông và cua Xô)
+                        <h3 class="popular__name">Cua Thịt
                         </h3>
                         <span class="popular__description">Cua Y luôn luôn nhiều thịt và ít gạch. Những con lớn nhất có
                             thể nặng hơn 700 gram, với thịt chắc và ngọt ngon. Phù hợp với những khách thích ăn
                             thịt.</span>
 
-                        <span class="popular__price">$10</span>
+                        <span class="popular__price">420.000đ</span>
 
                         <button class="popular__button">
                             <i class="ri-shopping-bag-line"></i>
@@ -165,7 +176,7 @@
                         <span class="popular__description">Cua Cốm có vỏ mỏng, thân mình ửng hồng. Xem bên trong yếm
                             thấy lông màu đỏ hồng, gạch cua nhiều và có màu vàng ươm.</span>
 
-                        <span class="popular__price">$10</span>
+                        <span class="popular__price">900.000đ</span>
 
                         <button class="popular__button">
                             <i class="ri-shopping-bag-line"></i>
@@ -181,12 +192,104 @@
                             rất nhiều gạch cua. Ăn gạch béo, thơm và bùi bùi. Phù hợp với những khách thích sự béo ngậy,
                             bùi bùi và thích ăn gạch cua</span>
 
-                        <span class="popular__price">$10</span>
+                        <span class="popular__price">750.000đ</span>
 
                         <button class="popular__button">
                             <i class="ri-shopping-bag-line"></i>
                         </button>
 
+                    </article>
+
+                </div>
+            </span>
+        </section>
+
+        <!--==================== PRODUCTS ====================-->
+        <section class="products section" id="products">
+            <span class="section__subtitle">
+                <h2 class="section__title">Sản Phẩm Của Chúng Tôi</h2>
+
+                <div class="products__container container grid">
+                    <article class="products__card">
+                        <img src="/IMG/cuathit.jpg" alt="products image" class="products__img">
+
+                        <h3 class="products__name">Cua Y(Cua Thịt)
+                        </h3>
+
+                        <h3 class="products__type">Loại: 3 con trên 1Kg</h3>
+
+                        <h3 class="products__weight">3 Con/kg</h3>
+
+                        <span class="prducts__price">420.000đ</span>
+
+                        <button class="products__button" data-name="Crab Meat" data-price="420.000">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+
+                    </article>
+
+
+                    <article class="products__card">
+                        <img src="/IMG/cuacom.jpg" alt="products image" class="products__img">
+
+                        <h3 class="products__name">Cua Cốm (2 da)</h3>
+                        <h3 class="products__type">Loại: 4-6 con trên 1Kg</h3>
+
+                        <h3 class="products__weight">4-6 Con/kg</h3>
+
+                        <span class="products__price">900.000đ</span>
+
+                        <button class="products__button" data-name="Crab Com" data-price="900.000">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+
+                    </article>
+
+                    <article class="products__card">
+                        <img src="/IMG/cuagach.jpg" alt="products image" class="products__img">
+
+                        <h3 class="products__name">Cua Gạch</h3>
+                        <h3 class="products__type">Loại: 3 con trên 1Kg</h3>
+
+                        <h3 class="products__weight">3 Con/kg</h3>
+
+                        <span class="products__price">750.000đ</span>
+
+                        <button class="products__button" data-name="Crab Gạch" data-price="750.000">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                    </article>
+
+                    <article class="products__card">
+                        <img src="/IMG/cuathit.jpg" alt="products image" class="products__img">
+
+                        <h3 class="products__name">Cua Y(Cua Thịt)
+                        </h3>
+
+                        <h3 class="products__type">Loại: 5 con trên 1Kg</h3>
+
+                        <h3 class="products__weight">5 Con/kg</h3>
+
+                        <span class="products__price">400.000đ</span>
+
+                        <button class="products__button" data-name="Crab Meat" data-price="400.000">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                    </article>
+
+                    <article class="products__card">
+                        <img src="/IMG/cuagach.jpg" alt="products image" class="products__img">
+
+                        <h3 class="products__name">Cua Gạch</h3>
+                        <h3 class="products__type">Loại: 5 con trên 1Kg</h3>
+
+                        <h3 class="products__weight">5 Con/kg</h3>
+
+                        <span class="products__price">700.000đ</span>
+
+                        <button class="products__button" data-name="Crab Gạch" data-price="700.000">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
                     </article>
 
                 </div>
@@ -247,6 +350,19 @@
             </div>
         </section> -->
     </main>
+
+    <!-- ================= Cart Section ================= -->
+    <div id="cart" class="cart">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart" class="close-cart">&times;</button>
+        </div>
+        <ul id="cart-items"></ul>
+        <div class="cart-total">
+            Total: <span id="cart-total-price">0.00VND</span>
+        </div>
+        <button class="button" id="checkout-button">Checkout</button>
+    </div>
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

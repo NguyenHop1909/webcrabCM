@@ -904,6 +904,16 @@ body.dark-theme{
     justify-content: center;
   }
 
+  .cart {
+    width: 200px; /* Điều chỉnh kích thước cho màn hình nhỏ */
+    font-size: 12px; /* Giảm kích thước chữ cho màn hình nhỏ */
+    padding: 5px; /* Giảm padding cho màn hình nhỏ */
+}
+
+.cart-icon {
+    font-size: 24px; /* Kích thước biểu tượng giỏ hàng */
+}
+
   /* .footer__content{
     gap: 1.5rem;
   } */
@@ -918,6 +928,12 @@ body.dark-theme{
     grid-template-columns: .7fr;
     justify-content: center;
   }
+
+  .cart {
+    width: 300px; /* Điều chỉnh kích thước giỏ hàng cho màn hình rộng hơn */
+    font-size: 14px; /* Tăng kích thước chữ cho màn hình rộng hơn */
+    padding: 15px; /* Tăng padding để phù hợp với kích thước lớn hơn */
+}
 }
 
 @media screen and (min-width: 767px) {
@@ -948,6 +964,37 @@ body.dark-theme{
   .popular__container{
     grid-template-columns: repeat(2, 250px);
   }
+
+  .cart {
+    width: 350px; /* Điều chỉnh kích thước giỏ hàng cho màn hình rộng hơn */
+    font-size: 16px; /* Tăng kích thước chữ cho màn hình rộng hơn */
+    padding: 20px; /* Tăng padding để phù hợp với kích thước lớn hơn */
+}
+
+
+/* Căn chỉnh lại các phần tử trong giỏ hàng cho màn hình lớn hơn */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-button {
+    margin-top: 20px;
+    display: block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
 
   /* .footer__content{
     grid-template-columns: repeat(4, max-content);
@@ -1192,6 +1239,36 @@ body.dark-theme{
     right: 3rem;
   }
 
+  .cart {
+    width: 400px; /* Điều chỉnh kích thước giỏ hàng cho màn hình rộng hơn */
+    font-size: 18px; /* Tăng kích thước chữ cho màn hình rộng hơn */
+    padding: 20px; /* Tăng padding để phù hợp với kích thước lớn hơn */
+}
+
+/* Căn chỉnh lại các phần tử trong giỏ hàng cho màn hình lớn hơn */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-button {
+    margin-top: 20px;
+    display: block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
 }
 
 
@@ -1205,6 +1282,37 @@ body.dark-theme{
   column-gap: 1.25rem;
   justify-content: center;
   font-size: 2rem;
+}
+
+.cart {
+  width: 400px; /* Điều chỉnh kích thước giỏ hàng cho màn hình rộng hơn */
+  font-size: 18px; /* Tăng kích thước chữ cho màn hình rộng hơn */
+  padding: 20px; /* Tăng padding để phù hợp với kích thước lớn hơn */
+}
+
+
+/* Căn chỉnh lại các phần tử trong giỏ hàng cho màn hình lớn hơn */
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-button {
+  margin-top: 20px;
+  display: block;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
 }
 }
 
@@ -1247,6 +1355,11 @@ body.dark-theme{
     bottom: -15rem;
     margin: 0 auto;
     width: 150px;
+  }
+
+  .cart{
+    width: 250px;
+    font-size: 14px;
   }
 
 }
@@ -1332,6 +1445,41 @@ body.dark-theme{
   .scrollup{
     right: 4rem;
   }
+
+  .cart {
+    width: 500px; /* Điều chỉnh kích thước giỏ hàng cho màn hình rộng hơn */
+    font-size: 20px; /* Tăng kích thước chữ cho màn hình rộng hơn */
+    padding: 25px; /* Tăng padding để phù hợp với kích thước lớn hơn */
+}
+
+.cart-icon {
+    font-size: 15px; /* Kích thước biểu tượng giỏ hàng cho màn hình rộng hơn */
+}
+
+/* Căn chỉnh lại các phần tử trong giỏ hàng cho màn hình lớn hơn */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-button {
+    margin-top: 25px;
+    display: block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 18px; /* Tăng kích thước chữ của nút thanh toán */
+}
 }
 
 /* CSS FOR LANGUAGE SWITCHING BUTTONS */
@@ -1363,33 +1511,84 @@ body.dark-theme{
 }
 
 
-
-
-
-.cart__container {
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  margin-top: 20px;
+/* Cart styles */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.cart__container ul {
+.close-cart {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cart {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: none; /* Giả sử giỏ hàng mặc định ẩn */
+}
+.cart h2 {
+  margin-bottom: 20px;
+}
+
+.cart ul {
   list-style: none;
   padding: 0;
 }
 
-.cart__container li {
+.cart ul li {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.cart__total {
-  font-weight: bold;
+.cart-total {
+  display: flex;
+  justify-content: space-between;
   margin-top: 20px;
-  text-align: right;
+  font-weight: bold;
 }
+
+#checkout-button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.change-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.change-quantity button {
+  background-color: #f1f1f1;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.remove-item {
+  cursor: pointer;
+  color: red;
+  margin-left: 10px;
+}
+
+.cart.show{
+  display: block;
+}
+
+
 
 
 
