@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
             totalPrice += item.price * item.quantity;
         });
 
-        cartTotalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+        cartTotalPriceElement.textContent = `${totalPrice.toFixed(2)}VND`;
 
         document.querySelectorAll('.increase-quantity').forEach(button => {
             button.addEventListener('click', function () {
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     checkoutButton.addEventListener('click', function () {
-        alert('Thank you for your purchase!');
+        alert('Cảm ơn vì đã mua hàng ạ!');
         // Clear the cart
         cartData.length = 0;
         cartCountElement.textContent = 0;
