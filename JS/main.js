@@ -383,6 +383,8 @@ document.addEventListener('DOMContentLoaded', function () {
     checkoutButton.addEventListener('click', function () {
         // Chuyển hướng đến trang thanh toán
         window.location.href = 'checkoutEN.html';
+        cartData.length = 0;
+        cartCountElement.textContent = 0;
         // Xóa giỏ hàng sau khi chuyển hướng
         setTimeout(() => {
             localStorage.removeItem('cartData');
