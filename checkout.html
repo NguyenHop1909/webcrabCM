@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Crab Store</title>
+    <link rel="stylesheet" href="/CSS/styles.css"> <!-- Đảm bảo liên kết CSS của bạn -->
+</head>
+
+<body>
+    <header class="header">
+        <!-- Bạn có thể sao chép phần header từ trang chính của bạn ở đây -->
+    </header>
+
+    <main class="checkout">
+        <section class="checkout__section">
+            <h1 class="checkout__title">Thanh Toán</h1>
+            <form id="checkout-form" class="checkout__form">
+                <div class="checkout__form-group">
+                    <label for="name">Họ và Tên:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="checkout__form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="checkout__form-group">
+                    <label for="phone">Số Điện Thoại:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="checkout__form-group">
+                    <label for="address">Địa Chỉ:</label>
+                    <textarea id="address" name="address" rows="4" required></textarea>
+                </div>
+
+                <div class="checkout__summary">
+                    <h2>Tổng Hóa Đơn:</h2>
+                    <p id="order-summary">Bạn chưa có sản phẩm nào trong giỏ hàng.</p>
+                </div>
+
+                <button type="submit" class="button">Hoàn Thành Đặt Hàng</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container grid">
+
+            <div class="footer__content">
+                <!-- <div>
+                    <h3 class="footer__title">Main Menu</h3>
+
+                    <ul class="footer_links">
+                        <li>
+                            <a href="#" class="footer_link">About</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Menu</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Offers</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Events</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">Information</h3>
+
+                    <ul class="footer_links">
+                        <li>
+                            <a href="#" class="footer_link">Contact</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Order & Returns</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Videos</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="footer_link">Reservation</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">Address</h3>
+
+                    <ul class="footer_links">
+                        <li class="footer__information">
+                            dien dia chi vao <br>
+                            thanh pho ...
+                        </li>
+
+                        <li class="footer__information">
+                            9AM - 11PM
+                        </li>
+                    </ul>
+                </div> -->
+
+                <div>
+                    <h3 class="footer__title">Social Media</h3>
+
+                    <ul class="footer_social">
+                        <a href="https://www.facebook.com/hopnguyen2001/" target="_blank" class="footer__social-link">
+                            <i class="ri-facebook-circle-fill"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/hop1567/" target="_blank" class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/hop-nguyen-906833244/" target="_blank"
+                            class="footer__social-link">
+                            <i class="ri-linkedin-box-fill"></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <!-- <img src="/IMG/spring-onion.png" alt="footer image" class="footer__onion"> -->
+            <!-- <img src="/IMG/spinach-leaf.png" alt="footer image" class="footer__spinach"> -->
+            <img src="/IMG/leaf-branch-4.png" alt="footer image" class="footer__leaf">
+        </div>
+
+        <div class="footer__info container">
+            <span class="footer__copy">
+                &#169; Copyright HOP
+            </span>
+        </div>
+    </footer>
+    <script src="/JS/checkout.js"></script> <!-- Liên kết đến file JavaScript của bạn -->
+</body>
+
+</html>
