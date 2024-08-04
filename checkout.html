@@ -29,8 +29,12 @@
 
                 <div class="checkout__form-group">
                     <label for="phone">Số Điện Thoại:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <input type="tel" id="phone" name="phone" required 
+                           pattern="[0-9]{10,11}" 
+                           placeholder="Nhập số điện thoại (10-11 số)">
+                    <small class="form-text">Số điện thoại phải gồm 10 đến 11 chữ số.</small>
                 </div>
+                
 
                 <div class="checkout__form-group">
                     <label for="address">Địa Chỉ:</label>

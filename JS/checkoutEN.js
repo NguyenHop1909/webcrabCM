@@ -67,3 +67,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 2000); // Thay đổi thời gian nếu cần thiết
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('checkout-form');
+
+    form.addEventListener('submit', function (event) {
+        const phoneInput = document.getElementById('phone');
+        const phonePattern = /^[0-9]{10,11}$/;
+
+        if (!phonePattern.test(phoneInput.value)) {
+            event.preventDefault(); // Ngăn chặn hành động mặc định của form
+            alert('Invalid phone number. Please enter a 10 or 11 digit phone number.');
+            phoneInput.focus();
+        }
+    });
+});
