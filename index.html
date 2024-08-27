@@ -28,11 +28,11 @@
 
             <!-- LANGUAGE SWITCHING BUTTONS -->
             <div class="lang-buttons">
-                <button class="lang-button" onclick="window.location.href='/EN.html';">
+                <button class="lang-button" data-lang="en" onclick="window.location.href='/EN.html';">
                     <img src="/IMG/en-US.gif" alt="English Flag">
                 </button>
 
-                <button class="lang-button" onclick="window.location.href='/VN.html';">
+                <button class="lang-button" data-lang="vi" onclick="window.location.href='/VN.html';">
                     <img src="/IMG/vi-VN.gif" alt="Vietnamese Flag">
                 </button>
             </div>
@@ -72,7 +72,6 @@
             <div class="nav__buttons">
                 <!-- Theme change button -->
                 <i class="ri-moon-line change-theme" id="theme-button"></i>
-
 
                 <!-- Cart icon -->
                 <div class="cart-icon" id="cart-icon">
@@ -166,7 +165,7 @@
                             long Y-shaped abdomen. The largest ones can weigh over 700 grams, with firm meat that tastes
                             sweet and delicious.</span>
 
-                        <span class="popular__price">$10</span>
+                        <span class="popular__price">$16.6</span>
 
                         <a href="#products" class="button">Order Now <i class="ri-arrow-right-line"></i></a>
 
@@ -184,7 +183,7 @@
                             inside the abdomen, you can see pinkish-red fibers, and the crab roe is abundant and
                             golden.</span>
 
-                        <span class="popular__price">$40</span>
+                        <span class="popular__price">$35.57</span>
 
                         <a href="#products" class="button">Order Now <i class="ri-arrow-right-line"></i></a>
 
@@ -201,7 +200,7 @@
                         <span class="popular__description">Gạch crabs have very large abdomens, which are almost
                             rectangular in shape, and they contain a lot of crab fat.</span>
 
-                        <span class="popular__price">$100</span>
+                        <span class="popular__price">$29.64</span>
 
                         <a href="#products" class="button">Order Now <i class="ri-arrow-right-line"></i></a>
                     </article>
@@ -219,75 +218,66 @@
                 <div class="products__container container grid">
                     <article class="products__card">
                         <img src="/IMG/cuathit.jpg" alt="products image" class="products__img">
-
-                        <h3 class="products__name">Crab Y(Crab Meat)
-                        </h3>
-
+                        <h3 class="products__name" data-lang-en="Crab Y (Crab Meat)" data-lang-vi="Cua Y (Thịt Cua)">
+                            Crab Y(Crab Meat)</h3>
                         <h3 class="products__type">Type: 3 crabs per kilogram</h3>
-
                         <h3 class="products__weight">3 crabs/kg</h3>
-
-                        <span class="products__price">$16.6</span>
-
+                        <span class="products__price" data-lang-en="$16.6" data-lang-vi="420.000 VNĐ">$16.6</span>
                         <button class="products__button" data-name="Crab Meat" data-price="16.6">
                             <i class="ri-shopping-bag-line"></i>
                         </button>
-
                     </article>
 
 
                     <article class="products__card">
                         <img src="/IMG/cuacom.jpg" alt="products image" class="products__img">
-
-                        <h3 class="products__name">Crab Com (2 skins)</h3>
+                        <h3 class="products__name" data-lang-en="Crab Com" data-lang-vi="Cua Cốm">Crab Com (2 skins)
+                        </h3>
                         <h3 class="products__type">Type: 4-6 crabs per kilogram</h3>
                         <h3 class="products__weight">4-6 crabs/kg</h3>
-
-
-                        <span class="products__price">$35.57</span>
-
+                        <span class="products__price" data-lang-en="$35.57" data-lang-vi="900.000 VNĐ">$35.57</span>
                         <button class="products__button" data-name="Crab Com" data-price="35.57">
                             <i class="ri-shopping-bag-line"></i>
                         </button>
-
                     </article>
+
 
                     <article class="products__card">
                         <img src="/IMG/cuagach.jpg" alt="products image" class="products__img">
-
-                        <h3 class="products__name">Crab Gạch</h3>
+                        <h3 class="products__name" data-lang-en="Crab Gach" data-lang-vi="Cua Gạch">Crab Gạch</h3>
                         <h3 class="products__type">Type: 3 crabs per kilogram</h3>
                         <h3 class="products__weight">3 crabs/kg</h3>
-
-                        <span class="products__price">$29.64</span>
-
+                        <span class="products__price" data-lang-en="$29.64" data-lang-vi="750.000 VNĐ">$29.64</span>
                         <button class="products__button" data-name="Crab Gạch" data-price="29.64">
                             <i class="ri-shopping-bag-line"></i>
                         </button>
                     </article>
 
+
+
                     <article class="products__card">
                         <img src="/IMG/cuathit.jpg" alt="products image" class="products__img">
 
-                        <h3 class="products__name">Crab Y(Crab Meat)
-                        </h3>
+                        <h3 class="products__name" data-lang-en="Crab Y (Crab Meat)" data-lang-vi="Cua Y (Thịt Cua)">
+                            Crab Y(Crab Meat)</h3>
 
                         <h3 class="products__type">Type: 5 crabs per kilogram</h3>
                         <h3 class="products__weight">5 crabs/kg</h3>
-                        <span class="products__price">$15.81</span>
-
+                        <span class="products__price" data-lang-en="$15.81" data-lang-vi="400.000 VNĐ">$16.6</span>
                         <button class="products__button" data-name="Crab Meat" data-price="15.81">
                             <i class="ri-shopping-bag-line"></i>
                         </button>
                     </article>
 
+
+
                     <article class="products__card">
                         <img src="/IMG/cuagach.jpg" alt="products image" class="products__img">
 
-                        <h3 class="products__name">Crab Gạch</h3>
+                        <h3 class="products__name" data-lang-en="Crab Gach" data-lang-vi="Cua Gạch">Crab Gạch</h3>
                         <h3 class="products__type">Type: 5 crabs per kilogram</h3>
                         <h3 class="products__weight">5 crabs/kg</h3>
-                        <span class="products__price">$27.67</span>
+                        <span class="products__price" data-lang-en="$27.67" data-lang-vi="700.000 VNĐ">$29.64</span>
 
                         <button class="products__button" data-name="Crab Gạch" data-price="27.67">
                             <i class="ri-shopping-bag-line"></i>
@@ -365,7 +355,6 @@
         </div>
         <button class="button" id="checkout-button">Checkout</button>
     </div>
-
 
     <!--==================== FOOTER ====================-->
     <footer class="footer">

@@ -14,7 +14,7 @@
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="/CSS/styles.css">
 
-    <title>Crab Store - Fresh Ca Mau</title>
+    <title>Crab Store - Cua Cà Mau Tươi Sống</title>
 </head>
 
 <body>
@@ -28,11 +28,11 @@
 
             <!-- LANGUAGE SWITCHING BUTTONS -->
             <div class="lang-buttons">
-                <button class="lang-button" onclick="window.location.href='/EN.html';">
+                <button class="lang-button" data-lang="en" onclick="window.location.href='/EN.html';">
                     <img src="/IMG/en-US.gif" alt="English Flag">
                 </button>
 
-                <button class="lang-button" onclick="window.location.href='/VN.html';">
+                <button class="lang-button" data-lang="vi" onclick="window.location.href='/VN.html';">
                     <img src="/IMG/vi-VN.gif" alt="Vietnamese Flag">
                 </button>
             </div>
@@ -218,32 +218,26 @@
                 <div class="products__container container grid">
                     <article class="products__card">
                         <img src="/IMG/cuathit.jpg" alt="products image" class="products__img">
-
-                        <h3 class="products__name">Cua Y(Cua Thịt)
-                        </h3>
-
+                        <h3 class="products__name" data-lang-en="Crab Y (Crab Meat)" data-lang-vi="Cua Y (Thịt Cua)">Cua
+                            Y(Cua Thịt)</h3>
                         <h3 class="products__type">Loại: 3 con trên 1Kg</h3>
-
                         <h3 class="products__weight">3 Con/kg</h3>
-
-                        <span class="prducts__price">420.000đ</span>
-
+                        <span class="products__price" data-lang-en="$16.6" data-lang-vi="420.000 VNĐ">420.000đ</span>
                         <button class="products__button" data-name="Cua Thịt" data-price="420.000">
                             <i class="ri-shopping-bag-line"></i>
                         </button>
-
                     </article>
 
 
                     <article class="products__card">
                         <img src="/IMG/cuacom.jpg" alt="products image" class="products__img">
 
-                        <h3 class="products__name">Cua Cốm (2 da)</h3>
+                        <h3 class="products__name" data-lang-en="Crab Com" data-lang-vi="Cua Cốm">Cua Cốm (2 da)</h3>
                         <h3 class="products__type">Loại: 4-6 con trên 1Kg</h3>
 
                         <h3 class="products__weight">4-6 Con/kg</h3>
 
-                        <span class="products__price">900.000đ</span>
+                        <span class="products__price" data-lang-en="$35.57" data-lang-vi="900.000 VNĐ">900.000đ</span>
 
                         <button class="products__button" data-name="Cua Cốm" data-price="900.000">
                             <i class="ri-shopping-bag-line"></i>
@@ -254,12 +248,12 @@
                     <article class="products__card">
                         <img src="/IMG/cuagach.jpg" alt="products image" class="products__img">
 
-                        <h3 class="products__name">Cua Gạch</h3>
+                        <h3 class="products__name" data-lang-en="Crab Gach" data-lang-vi="Cua Gạch">Cua Gạch</h3>
                         <h3 class="products__type">Loại: 3 con trên 1Kg</h3>
 
                         <h3 class="products__weight">3 Con/kg</h3>
 
-                        <span class="products__price">750.000đ</span>
+                        <span class="products__price" data-lang-en="$29.64" data-lang-vi="750.000 VNĐ">750.000đ</span>
 
                         <button class="products__button" data-name="Cua Gạch" data-price="750.000">
                             <i class="ri-shopping-bag-line"></i>
@@ -269,14 +263,14 @@
                     <article class="products__card">
                         <img src="/IMG/cuathit.jpg" alt="products image" class="products__img">
 
-                        <h3 class="products__name">Cua Y(Cua Thịt)
-                        </h3>
+                        <h3 class="products__name" data-lang-en="Crab Y (Crab Meat)" data-lang-vi="Cua Y (Thịt Cua)">Cua
+                            Y(Cua Thịt)</h3>
 
                         <h3 class="products__type">Loại: 5 con trên 1Kg</h3>
 
                         <h3 class="products__weight">5 Con/kg</h3>
 
-                        <span class="products__price">400.000đ</span>
+                        <span class="products__price" data-lang-en="$15.81" data-lang-vi="400.000 VNĐ">400.000đ</span>
 
                         <button class="products__button" data-name="Cua Thịt" data-price="400.000">
                             <i class="ri-shopping-bag-line"></i>
@@ -286,12 +280,12 @@
                     <article class="products__card">
                         <img src="/IMG/cuagach.jpg" alt="products image" class="products__img">
 
-                        <h3 class="products__name">Cua Gạch</h3>
+                        <h3 class="products__name" data-lang-en="Crab Gach" data-lang-vi="Cua Gạch">Cua Gạch</h3>
                         <h3 class="products__type">Loại: 5 con trên 1Kg</h3>
 
                         <h3 class="products__weight">5 Con/kg</h3>
 
-                        <span class="products__price">700.000đ</span>
+                        <span class="products__price" data-lang-en="$27.67" data-lang-vi="700.000 VNĐ">700.000đ</span>
 
                         <button class="products__button" data-name="Cua Gạch" data-price="700.000">
                             <i class="ri-shopping-bag-line"></i>
