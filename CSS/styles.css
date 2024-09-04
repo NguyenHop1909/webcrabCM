@@ -1628,6 +1628,160 @@ body.dark-theme{
 
 
 
+/* Modal Background */
+.modal {
+  display: none; /* Ẩn mặc định */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #ffffff; /* Màu nền sáng hơn */
+  border-radius: 30px; /* Bo góc */
+  margin: 10% auto; /* Căn giữa */
+  padding: 20px;
+  border: 1px solid #ccc; /* Đổi màu viền */
+  width: 90%; /* Giảm kích thước */
+  max-width: 500px; /* Đặt kích thước tối đa */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+/* Close Button */
+.close-modal {
+  color: #333; /* Màu nút đóng tối hơn */
+  float: right;
+  font-size: 24px; /* Kích thước nhỏ hơn */
+  font-weight: bold;
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #000; /* Màu khi hover */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Scroll Button */
+#scroll-to-products {
+  background-color: #007bff; /* Màu nền nút */
+  color: #ffffff; /* Màu chữ nút */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px; /* Bo góc nút */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền */
+}
+
+#scroll-to-products:hover {
+  background-color: #0056b3; /* Màu nền khi hover */
+}
+
+
+
+
+
+
+.modal-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Email lỗi */
+
+/* CSS cho modal */
+.modal {
+  display: none; /* Ẩn modal mặc định */
+  position: fixed; /* Cố định modal */
+  z-index: 1000; /* Hiển thị modal trên tất cả các thành phần khác */
+  left: 0;
+  top: 0;
+  width: 100%; /* Chiều rộng toàn màn hình */
+  height: 100%; /* Chiều cao toàn màn hình */
+  overflow: auto; /* Cuộn nếu cần thiết */
+  background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+}
+
+/* Nội dung modal */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto; /* 15% từ trên xuống và căn giữa */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Độ rộng của modal */
+  max-width: 400px; /* Độ rộng tối đa */
+  border-radius: 10px;
+  text-align: center; /* Căn giữa văn bản */
+}
+
+/* Nút đóng modal */
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Nút trong modal */
+.modal-button {
+  background-color: #4CAF50; /* Màu xanh lá cây */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal-button:hover {
+  background-color: #45a049;
+}
+
+
+/*Đặt hành thành công*/
+
+.modal-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-button:hover {
+  background-color: #0056b3;
+}
+
+
+
 
 
 

@@ -29,9 +29,8 @@
 
                 <div class="checkout__form-group">
                     <label for="phone">Phone:</label>
-                    <input type="tel" id="phone" name="phone" required 
-                           pattern="[0-9]{10,11}" 
-                           placeholder="Enter phone number (10-11 digits)">
+                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10,11}"
+                        placeholder="Enter phone number (10-11 digits)">
                     <small class="form-text">Phone number must be 10 to 11 digits.</small>
                 </div>
 
@@ -148,6 +147,23 @@
             </span>
         </div>
     </footer>
+
+    <!-- Modal thông báo -->
+    <div id="order-success-modal" class="modal">
+        <div class="modal-content">
+            <p>Thank you for your order! We wish you a great day!</p>
+            <button id="back-to-shop" class="modal-button">Back to the Shop Home Page</button>
+        </div>
+    </div>
+
+    <!-- Modal Thông Báo Email Không Hợp Lệ -->
+    <div id="email-error-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <p>Invalid email address. Please enter an email in the format 'example@gmail.com'.</p>
+            <button id="retry-email" class="modal-button">Re-enter email</button>
+        </div>
+    </div>
 
     <script src="/JS/checkoutEN.js"></script> <!-- Liên kết đến file JavaScript của bạn -->
 </body>

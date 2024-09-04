@@ -1,17 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
+    /*=============== VARIABLES ===============*/
+    const cartIcon = document.getElementById('cart-icon');
+    const cart = document.getElementById('cart');
+    const closeCartButton = document.getElementById('close-cart');
+    const cartItemsElement = document.getElementById('cart-items');
+    const cartTotalPriceElement = document.getElementById('cart-total-price');
+    const checkoutButton = document.getElementById('checkout-button');
+    const cartCountElement = document.getElementById('cart-count');
+    const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+
     /*=============== SHOW MENU ===============*/
     const navMenu = document.getElementById('nav-menu');
     const navToggle = document.getElementById('nav-toggle');
     const navClose = document.getElementById('nav-close');
 
-    /* ========= MENU SHOW ==========*/
     if (navToggle) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.add('show-menu');
         });
     }
 
-    /* ========= MENU HIDDEN ==========*/
     if (navClose) {
         navClose.addEventListener('click', () => {
             navMenu.classList.remove('show-menu');
@@ -39,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', scrollHeader);
 
-    /*=============== SHOW SCROLL UP ===============*/
+    /*=============== SHOW SCROLL UP ===============*/ 
     const scrollUp = () => {
         const scrollUp = document.getElementById('scroll-up');
         if (window.scrollY >= 350) {
@@ -73,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', scrollActive);
 
-    /*=============== DARK LIGHT THEME ===============*/
+    /*=============== DARK LIGHT THEME ===============*/ 
     const themeButton = document.getElementById('theme-button');
     const darkTheme = 'dark-theme';
     const iconTheme = 'ri-sun-line';
@@ -133,6 +141,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 price.textContent = langText;
             }
         });
+
+        // Clear cart when language changes
+        localStorage.removeItem('cartData');
+        cartData.length = 0;
+        updateCart();
     }
 
     const currentLang = window.location.pathname.includes('VN') ? 'vi' : 'en';
@@ -143,19 +156,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const lang = button.getAttribute('data-lang');
             updateLanguage(lang);
 
-            // Save selected language to localStorage
             localStorage.setItem('selected-language', lang);
-
-            // Highlight the selected language button
-            langButtons.forEach(btn => {
-                btn.classList.remove('active');
-                btn.style.opacity = btn === button ? '1' : '0.3';
-            });
-            button.classList.add('active');
         });
     });
 
-    // Set language based on localStorage on page load
     document.addEventListener('DOMContentLoaded', () => {
         const savedLang = localStorage.getItem('selected-language') || currentLang;
         updateLanguage(savedLang);
@@ -164,28 +168,64 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     /*=============== CART FUNCTIONALITY ===============*/
-    const cartIcon = document.getElementById('cart-icon');
-    const cart = document.getElementById('cart');
-    const closeCartButton = document.getElementById('close-cart');
-    const cartItemsElement = document.getElementById('cart-items');
-    const cartTotalPriceElement = document.getElementById('cart-total-price');
-    const checkoutButton = document.getElementById('checkout-button');
-    const cartCountElement = document.getElementById('cart-count');
-    const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+    function updateCart() {
+        cartItemsElement.innerHTML = '';
+        let totalPrice = 0;
+    
+        cartData.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                ${item.name} (${item.type}) - ${item.price.toFixed(2)} USD
+                <div class="change-quantity">
+                    <button class="decrease-quantity" data-id="${item.id}">-</button>
+                    x${item.quantity}
+                    <button class="increase-quantity" data-id="${item.id}">+</button>
+                </div>
+                <span class="remove-item" data-id="${item.id}">&times;</span>
+            `;
+            cartItemsElement.appendChild(li);
+            totalPrice += item.price * item.quantity;
+        });
+    
+        cartTotalPriceElement.textContent = `${totalPrice.toFixed(2)} USD`;
+        cartCountElement.textContent = cartData.reduce((sum, item) => sum + item.quantity, 0);
+    
+        document.querySelectorAll('.increase-quantity').forEach(button => {
+            button.addEventListener('click', function () {
+                const id = this.getAttribute('data-id');
+                increaseQuantity(id);
+            });
+        });
+    
+        document.querySelectorAll('.decrease-quantity').forEach(button => {
+            button.addEventListener('click', function () {
+                const id = this.getAttribute('data-id');
+                decreaseQuantity(id);
+            });
+        });
+    
+        document.querySelectorAll('.remove-item').forEach(button => {
+            button.addEventListener('click', function () {
+                const id = this.getAttribute('data-id');
+                removeFromCart(id);
+            });
+        });
+    }
+    
 
-    function addToCart(name, price) {
-        const item = cartData.find(product => product.name === name);
+    function addToCart(id, name, price, type) {
+        const item = cartData.find(product => product.id === id);
         if (item) {
             item.quantity += 1;
         } else {
-            cartData.push({ name, price, quantity: 1 });
+            cartData.push({ id, name, price, type, quantity: 1 });
         }
         localStorage.setItem('cartData', JSON.stringify(cartData));
         updateCart();
     }
 
-    function increaseQuantity(name) {
-        const item = cartData.find(product => product.name === name);
+    function increaseQuantity(id) {
+        const item = cartData.find(product => product.id === id);
         if (item) {
             item.quantity += 1;
             localStorage.setItem('cartData', JSON.stringify(cartData));
@@ -193,19 +233,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function decreaseQuantity(name) {
-        const item = cartData.find(product => product.name === name);
+    function decreaseQuantity(id) {
+        const item = cartData.find(product => product.id === id);
         if (item && item.quantity > 1) {
             item.quantity -= 1;
             localStorage.setItem('cartData', JSON.stringify(cartData));
             updateCart();
         } else if (item && item.quantity === 1) {
-            removeFromCart(name);
+            removeFromCart(id);
         }
     }
 
-    function removeFromCart(name) {
-        const itemIndex = cartData.findIndex(product => product.name === name);
+    function removeFromCart(id) {
+        const itemIndex = cartData.findIndex(product => product.id === id);
         if (itemIndex > -1) {
             cartData.splice(itemIndex, 1);
             localStorage.setItem('cartData', JSON.stringify(cartData));
@@ -214,50 +254,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (cartData.length === 0) {
             cart.style.display = 'none';
         }
-    }
-
-    function updateCart() {
-        cartItemsElement.innerHTML = '';
-        let totalPrice = 0;
-
-        cartData.forEach(item => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                ${item.name} - $${item.price.toFixed(2)}
-                <div class="change-quantity">
-                    <button class="decrease-quantity" data-name="${item.name}">-</button>
-                    x${item.quantity}
-                    <button class="increase-quantity" data-name="${item.name}">+</button>
-                </div>
-                <span class="remove-item" data-name="${item.name}">&times;</span>
-            `;
-            cartItemsElement.appendChild(li);
-            totalPrice += item.price * item.quantity;
-        });
-
-        cartTotalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
-        cartCountElement.textContent = cartData.reduce((sum, item) => sum + item.quantity, 0);
-
-        document.querySelectorAll('.increase-quantity').forEach(button => {
-            button.addEventListener('click', function () {
-                const name = this.getAttribute('data-name');
-                increaseQuantity(name);
-            });
-        });
-
-        document.querySelectorAll('.decrease-quantity').forEach(button => {
-            button.addEventListener('click', function () {
-                const name = this.getAttribute('data-name');
-                decreaseQuantity(name);
-            });
-        });
-
-        document.querySelectorAll('.remove-item').forEach(button => {
-            button.addEventListener('click', function () {
-                const name = this.getAttribute('data-name');
-                removeFromCart(name);
-            });
-        });
     }
 
     cartIcon.addEventListener('click', function () {
@@ -271,14 +267,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     checkoutButton.addEventListener('click', function () {
         if (cartData.length === 0) {
-            // Hiển thị thông báo cho người dùng
-            alert('Bạn chưa chọn mặt hàng. Hãy vui lòng chọn sản phẩm để thanh toán!!!');
+            // Hiển thị modal cho người dùng
+            const modal = document.getElementById('cart-warning-modal');
+            const closeModalButton = document.querySelector('.close-modal');
+            const scrollToProductsButton = document.getElementById('scroll-to-products');
 
-            // Cuộn trang xuống phần sản phẩm
-            const productsSection = document.getElementById('products');
-            if (productsSection) {
-                productsSection.scrollIntoView({ behavior: 'smooth' });
-            }
+            modal.style.display = 'block';
+
+            closeModalButton.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            scrollToProductsButton.addEventListener('click', () => {
+                const productsSection = document.getElementById('products');
+                if (productsSection) {
+                    productsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+                modal.style.display = 'none';
+            });
         } else {
             // Chuyển hướng đến trang thanh toán
             window.location.href = 'checkoutEN.html';
@@ -293,10 +299,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelectorAll('.products__button').forEach(button => {
         button.addEventListener('click', function () {
+            const id = this.getAttribute('data-id');
             const name = this.getAttribute('data-name');
             const price = parseFloat(this.getAttribute('data-price'));
+            const type = this.getAttribute('data-type'); // Lấy thông tin loại cua
 
-            addToCart(name, price);
+            addToCart(id, name, price, type);
         });
     });
 
