@@ -10,7 +10,7 @@
 
 <body>
     <header class="header">
-
+        <!-- Nội dung header -->
     </header>
 
     <main class="checkout">
@@ -34,7 +34,6 @@
                     <small class="form-text">Số điện thoại phải gồm 10 đến 11 chữ số.</small>
                 </div>
 
-
                 <div class="checkout__form-group">
                     <label for="address">Địa Chỉ:</label>
                     <textarea id="address" name="address" rows="4" required></textarea>
@@ -45,109 +44,24 @@
                     <p id="order-summary">Bạn chưa có sản phẩm nào trong giỏ hàng.</p>
                 </div>
 
-                <button type="submit" class="button">Hoàn Thành Đặt Hàng</button>
+                <!-- Nút "Hoàn Thành Đặt Hàng" -->
+                <button id="submit-order" type="submit" class="button">Hoàn Thành Đặt Hàng</button>
             </form>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="footer__container container grid">
-
-            <div class="footer__content">
-                <!-- <div>
-                    <h3 class="footer__title">Main Menu</h3>
-
-                    <ul class="footer_links">
-                        <li>
-                            <a href="#" class="footer_link">About</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="footer_link">Menu</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="footer_link">Offers</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="footer_link">Events</a>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="footer__title">Information</h3>
-
-                    <ul class="footer_links">
-                        <li>
-                            <a href="#" class="footer_link">Contact</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="footer_link">Order & Returns</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="footer_link">Videos</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="footer_link">Reservation</a>
-                        </li>
-
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="footer__title">Address</h3>
-
-                    <ul class="footer_links">
-                        <li class="footer__information">
-                            dien dia chi vao <br>
-                            thanh pho ...
-                        </li>
-
-                        <li class="footer__information">
-                            9AM - 11PM
-                        </li>
-                    </ul>
-                </div> -->
-
-                <div>
-                    <h3 class="footer__title">Nền Tảng Mạng Xã Hội</h3>
-
-                    <ul class="footer_social">
-                        <a href="https://www.facebook.com/hopnguyen2001/" target="_blank" class="footer__social-link">
-                            <i class="ri-facebook-circle-fill"></i>
-                        </a>
-
-                        <a href="https://www.instagram.com/hop1567/" target="_blank" class="footer__social-link">
-                            <i class="ri-instagram-line"></i>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/hop-nguyen-906833244/" target="_blank"
-                            class="footer__social-link">
-                            <i class="ri-linkedin-box-fill"></i>
-                        </a>
-                    </ul>
-                </div>
-            </div>
-
-
-
-            <!-- <img src="/IMG/spring-onion.png" alt="footer image" class="footer__onion"> -->
-            <!-- <img src="/IMG/spinach-leaf.png" alt="footer image" class="footer__spinach"> -->
-            <img src="/IMG/leaf-branch-4.png" alt="footer image" class="footer__leaf">
-        </div>
-
-        <div class="footer__info container">
-            <span class="footer__copy">
-                &#169; Copyright HOP
-            </span>
-        </div>
+        <!-- Nội dung footer -->
     </footer>
+
+<!-- Màn hình loading toàn màn hình -->
+<div id="loading-screen" style="display: none;">
+    <div class="loading-dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</div>
 
     <!-- Modal thông báo -->
     <div id="order-success-modal" class="modal">

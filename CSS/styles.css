@@ -1781,9 +1781,47 @@ body.dark-theme{
 }
 
 
+#loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Nền đen với độ mờ */
+  z-index: 1000; /* Đảm bảo hiển thị trên tất cả các thành phần khác */
+}
 
+.loading-dots {
+  display: flex;
+  gap: 10px; /* Khoảng cách giữa các chấm */
+}
 
+.dot {
+  width: 20px; /* Kích thước của chấm */
+  height: 20px;
+  border-radius: 50%; /* Làm tròn chấm */
+  animation: dot-blink 1s infinite; /* Hiệu ứng nhấp nháy */
+}
 
+/* Các màu sắc khác nhau cho từng chấm */
+.dot:nth-child(1) {
+  background-color: #ff3d00; /* Đỏ */
+  animation-delay: 0s; /* Không có độ trễ */
+}
+.dot:nth-child(2) {
+  background-color: #00e676; /* Xanh lá */
+  animation-delay: 0.2s; /* Độ trễ 0.2 giây */
+}
+.dot:nth-child(3) {
+  background-color: #2979ff; /* Xanh dương */
+  animation-delay: 0.4s; /* Độ trễ 0.4 giây */
+}
 
-
+@keyframes dot-blink {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.5); } /* Nhấn chấm */
+}
 
