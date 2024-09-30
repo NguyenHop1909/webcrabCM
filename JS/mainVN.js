@@ -123,6 +123,20 @@ document.addEventListener('DOMContentLoaded', function () {
     /*=============== LANGUAGE SWITCHER ===============*/
     const langButtons = document.querySelectorAll('.lang-button');
 
+    langButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const selectedLang = button.getAttribute('data-lang');
+            
+            // Assuming that you're changing between two HTML pages for language switching
+            if (selectedLang === 'en') {
+                window.location.href = '/EN.html';
+            } else if (selectedLang === 'vi') {
+                window.location.href = '/VN.html';
+            }
+        });
+    });
+
+
     // Function to update product names and prices based on language
     function updateLanguage(lang) {
         const productNames = document.querySelectorAll('.products__name');
