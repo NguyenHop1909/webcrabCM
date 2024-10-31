@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('checkout-form');
     const orderSummary = document.getElementById('order-summary');
     const submitButton = document.getElementById('submit-order');
-    const spinner = document.getElementById('loading-spinner');
     const loadingScreen = document.getElementById('loading-screen');  // Màn hình loading toàn màn hình
 
     const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
@@ -19,38 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     form.addEventListener('submit', function (event) {
         const phoneInput = document.getElementById('phone');
-        const emailInput = document.getElementById('email');
-        const modal = document.getElementById('email-error-modal');
-        const retryEmailButton = document.getElementById('retry-email');
+        const modal = document.getElementById('phone-error-modal'); // Nếu cần hiển thị modal cho số điện thoại không hợp lệ
 
         const phonePattern = /^[0-9]{10,11}$/;
-        const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com(\.[a-zA-Z]{2,})?$/;
 
         if (!phonePattern.test(phoneInput.value)) {
             event.preventDefault();
             alert('Số điện thoại không hợp lệ. Vui lòng nhập số điện thoại gồm 10 hoặc 11 chữ số.');
             phoneInput.focus();
-            return;
-        }
-
-        if (!emailPattern.test(emailInput.value)) {
-            event.preventDefault();
-            modal.style.display = 'block';
-            retryEmailButton.addEventListener('click', closeModal);
-            const closeModalButton = modal.querySelector('.close-modal');
-            closeModalButton.addEventListener('click', closeModal);
-
-            window.addEventListener('click', function(event) {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
-
-            function closeModal() {
-                modal.style.display = 'none';
-                emailInput.focus();
-            }
-
             return;
         }
 
@@ -66,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         data.cartItems = cartData;
 
-        fetch('https://script.google.com/macros/s/AKfycbzZiEg-bLtbep08sK3f6y2qdGnoRPU7ajpsPSJl1k1JAtmUwOVHGEsRnDfVDQ3uV_CVOg/exec', { 
+        fetch('https://script.google.com/macros/s/AKfycbwgkTULTIlLLjkPhA9bE-icAB8ksngpfmZuvggmBJ9wWTv_yaM0mmpyCg3cPcQb75Dp2w/exec', { 
             method: 'POST',
             contentType: 'application/json',
             body: JSON.stringify(data)

@@ -1825,3 +1825,112 @@ body.dark-theme{
   50% { transform: scale(1.5); } /* Nhấn chấm */
 }
 
+
+
+
+
+.cart-icon {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.cart-icon.added {
+  animation: shake 0.5s;
+}
+
+.cart-icon.active {
+  transform: scale(1.2);
+  color: #22ff34; /* Thay đổi màu sắc khi có sản phẩm được thêm */
+}
+
+@keyframes shake {
+  0% { transform: translate(0); }
+  25% { transform: translate(-5px, 0); }
+  50% { transform: translate(5px, 0); }
+  75% { transform: translate(-5px, 0); }
+  100% { transform: translate(0); }
+}
+
+.checkmark {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 14px;
+  color: green;
+  display: none;
+}
+
+
+
+.notification {
+  display: none; /* Ẩn thông báo mặc định */
+  position: fixed; /* Đặt vị trí cố định */
+  top: 50%; /* Giữa màn hình theo chiều dọc */
+  left: 50%; /* Giữa màn hình theo chiều ngang */
+  transform: translate(-50%, -50%); /* Dịch chuyển để căn giữa */
+  background: var(--first-color); /* Màu nền thay đổi theo theme */
+  color: var(--title-color); /* Màu chữ thay đổi theo theme */
+  padding: 20px 30px; /* Khoảng cách bên trong */
+  border-radius: 10px; /* Bo góc */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Đổ bóng */
+  z-index: 9999; /* Đặt trên tất cả các phần tử khác */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Hiệu ứng mờ và dịch chuyển */
+  animation: slideIn 0.5s forwards; /* Hiệu ứng xuất hiện */
+}
+
+@keyframes slideIn {
+  from {
+      transform: translate(-50%, -20px);
+      opacity: 0; /* Bắt đầu mờ */
+  }
+  to {
+      transform: translate(-50%, -50%);
+      opacity: 1; /* Kết thúc rõ nét */
+  }
+}
+
+.notification-message {
+  flex-grow: 1; /* Chiếm không gian còn lại */
+  font-family: 'Arial', sans-serif; /* Font chữ */
+  font-size: 18px; /* Kích thước chữ lớn hơn */
+  font-weight: bold; /* Đậm chữ */
+}
+
+#close-notification {
+  background-color: transparent; /* Nền trong suốt */
+  border: none; /* Không viền */
+  color: var(--title-color); /* Màu chữ từ biến */
+  font-size: 20px; /* Kích thước chữ lớn hơn */
+  font-weight: bold; /* Chữ đậm */
+  cursor: pointer; /* Hiển thị con trỏ khi di chuột */
+  transition: color 0.3s ease; /* Hiệu ứng chuyển màu */
+  position: absolute; /* Đặt vị trí tương đối */
+  top: 10px; /* Cách cạnh trên 10px */
+  right: 10px; /* Cách cạnh phải 10px */
+}
+
+#close-notification:hover {
+  color: hsl(0, 100%, 50%); /* Đổi màu khi di chuột */
+  transform: scale(1.1); /* Phóng to một chút khi di chuột */
+}
+
+
+
+.overlay {
+  display: none; /* Ẩn overlay mặc định */
+  position: fixed; /* Đặt vị trí cố định */
+  top: 0; /* Bao phủ toàn bộ trang */
+  left: 0;
+  width: 100%; /* Chiều rộng toàn màn hình */
+  height: 100%; /* Chiều cao toàn màn hình */
+  background-color: rgba(0, 0, 0, 0.5); /* Màu mờ với độ trong suốt */
+  z-index: 9998; /* Đặt dưới thông báo */
+  transition: opacity 0.5s ease; /* Hiệu ứng mờ */
+}
+
+
+
+
+
+

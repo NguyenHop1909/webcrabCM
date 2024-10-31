@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartCountElement = document.getElementById('cart-count');
     const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
 
+    // Thêm biến cho thông báo
+    const notification = document.getElementById('notification');
+
     /*=============== SHOW MENU ===============*/
     const navMenu = document.getElementById('nav-menu');
     const navToggle = document.getElementById('nav-toggle');
@@ -126,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
     langButtons.forEach(button => {
         button.addEventListener('click', () => {
             const selectedLang = button.getAttribute('data-lang');
+            localStorage.removeItem('cartData');
             
             // Assuming that you're changing between two HTML pages for language switching
             if (selectedLang === 'en') {
@@ -270,6 +274,42 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+
+// Hàm để hiện thông báo
+function showNotification() {
+    const notification = document.getElementById('notification');
+    const overlay = document.getElementById('overlay');
+
+    overlay.style.display = 'block'; // Hiện overlay
+    notification.style.display = 'flex'; // Hiện thông báo
+    notification.style.opacity = '1'; // Đặt độ mờ thành 1
+    overlay.style.opacity = '1'; // Đặt độ mờ overlay thành 1
+
+    // Đặt thời gian ẩn thông báo sau 5 giây
+    setTimeout(() => {
+        closeNotification(); // Gọi hàm để ẩn thông báo
+    }, 2000);
+}
+
+// Hàm để đóng thông báo
+    function closeNotification() {
+        const notification = document.getElementById('notification');
+        const overlay = document.getElementById('overlay');
+
+        notification.style.opacity = '0'; // Đặt độ mờ thông báo thành 0
+        overlay.style.opacity = '0'; // Đặt độ mờ overlay thành 0
+
+        setTimeout(() => {
+            notification.style.display = 'none'; // Ẩn thông báo sau khi đã mờ
+            overlay.style.display = 'none'; // Ẩn overlay sau khi đã mờ
+        }, 500); // Thời gian mờ trước khi ẩn
+    }
+
+     // Thêm sự kiện cho nút đóng thông báo
+    document.getElementById('close-notification').addEventListener('click', closeNotification);
+
+    showNotification();
+
     cartIcon.addEventListener('click', function () {
         cart.style.display = 'block';
         updateCart(); // Update cart content when opened
@@ -319,6 +359,19 @@ document.addEventListener('DOMContentLoaded', function () {
             const type = this.getAttribute('data-type'); // Lấy thông tin loại cua
 
             addToCart(id, name, price, type);
+
+        // Thêm hiệu ứng cho biểu tượng giỏ hàng
+        cartIcon.classList.add('active');
+        setTimeout(() => {
+            cartIcon.classList.remove('active');
+        }, 500); // Thời gian hiệu ứng là 500ms
+
+        // Thêm hiệu ứng cho biểu tượng giỏ hàng
+        cartIcon.classList.add('added');
+        setTimeout(() => {
+        cartIcon.classList.remove('added');
+        }, 500); // Thời gian hiệu ứng là 500ms
+
         });
     });
 
