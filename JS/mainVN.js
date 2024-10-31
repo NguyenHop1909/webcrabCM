@@ -12,6 +12,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // Thêm biến cho thông báo
     const notification = document.getElementById('notification');
 
+    // Thêm kiểm tra hàng tồn kho
+    const productCard = document.querySelector('[data-id="product-2"]');
+    const outOfStockMessage = productCard.querySelector('.out-of-stock');
+    const isOutOfStock = true; // Thay đổi giá trị này dựa vào điều kiện thực tế
+
+    if (isOutOfStock) {
+        outOfStockMessage.style.display = 'inline'; // Hiển thị thông báo hết hàng
+    } else {
+        outOfStockMessage.style.display = 'none'; // Ẩn thông báo nếu còn hàng
+    }
+    
+
     /*=============== SHOW MENU ===============*/
     const navMenu = document.getElementById('nav-menu');
     const navToggle = document.getElementById('nav-toggle');
