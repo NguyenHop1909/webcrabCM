@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cartData.forEach(item => {
             const li = document.createElement('li');
             li.innerHTML = `
-                ${item.name} (${item.type}) - ${item.price.toFixed(2)} VND
+                ${item.name} (${item.type}) - ${parseInt(item.price).toLocaleString('vi-VN')} VND
                 <div class="change-quantity">
                     <button class="decrease-quantity" data-id="${item.id}">-</button>
                     x${item.quantity}
@@ -217,9 +217,13 @@ document.addEventListener('DOMContentLoaded', function () {
             totalPrice += item.price * item.quantity;
         });
     
-        cartTotalPriceElement.textContent = `${totalPrice.toFixed(2)} VND`;
+        // Hiển thị tổng giá tiền với định dạng tiền tệ Việt Nam
+        cartTotalPriceElement.textContent = `${totalPrice.toLocaleString('vi-VN')}.000VND`;
+    
+        // Cập nhật số lượng sản phẩm trong giỏ hàng
         cartCountElement.textContent = cartData.reduce((sum, item) => sum + item.quantity, 0);
     
+        // Gắn sự kiện tăng số lượng sản phẩm
         document.querySelectorAll('.increase-quantity').forEach(button => {
             button.addEventListener('click', function () {
                 const id = this.getAttribute('data-id');
