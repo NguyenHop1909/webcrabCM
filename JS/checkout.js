@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         data.cartItems = cartData;
 
-        fetch('https://script.google.com/macros/s/AKfycbwgkTULTIlLLjkPhA9bE-icAB8ksngpfmZuvggmBJ9wWTv_yaM0mmpyCg3cPcQb75Dp2w/exec', { 
+        fetch('https://script.google.com/macros/s/AKfycbxXOkCE1tV44TVYrMhn2tBB1E3nB4Vru0ojaGXrg0djHidjvz6KmoQtDoNMRK2zkmlmrQ/exec', { 
             method: 'POST',
             contentType: 'application/json',
             body: JSON.stringify(data)
