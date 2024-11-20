@@ -152,51 +152,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-
-    // Function to update product names and prices based on language
-    // function updateLanguage(lang) {
-    //     const productNames = document.querySelectorAll('.products__name');
-    //     const productPrices = document.querySelectorAll('.products__price');
-
-    //     productNames.forEach((name) => {
-    //         const langText = name.getAttribute(`data-lang-${lang}`);
-    //         if (langText) {
-    //             name.textContent = langText;
-    //         }
-    //     });
-
-    //     productPrices.forEach((price) => {
-    //         const langText = price.getAttribute(`data-lang-${lang}`);
-    //         if (langText) {
-    //             price.textContent = langText;
-    //         }
-    //     });
-
-    //     // Clear cart when language changes
-    //     localStorage.removeItem('cartData');
-    //     cartData.length = 0;
-    //     updateCart();
-    // }
-
-    // const currentLang = window.location.pathname.includes('VN') ? 'vi' : 'en';
-    // updateLanguage(currentLang);
-
-    // langButtons.forEach(button => {
-    //     button.addEventListener('click', () => {
-    //         const lang = button.getAttribute('data-lang');
-    //         updateLanguage(lang);
-
-    //         localStorage.setItem('selected-language', lang);
-    //     });
-    // });
-
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     const savedLang = localStorage.getItem('selected-language') || currentLang;
-    //     updateLanguage(savedLang);
-
-    //     document.querySelector(`.lang-button[data-lang="${savedLang}"]`).classList.add('active');
-    // });
-
     /*=============== CART FUNCTIONALITY ===============*/
     function updateCart() {
         cartItemsElement.innerHTML = '';
@@ -386,6 +341,8 @@ function showNotification() {
 
         });
     });
+
+    
 
     // Initial update on page load
     updateCart();
