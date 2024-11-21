@@ -341,9 +341,8 @@ function showNotification() {
 
         });
     });
-
     
-
     // Initial update on page load
     updateCart();
+    
 });

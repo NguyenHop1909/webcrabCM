@@ -391,25 +391,53 @@
                     </article>
 
                     <!-- Sản phẩm 8 -->
-                    <article class="products__card" data-id="product-5">
+                    <article class="products__card" data-id="product-8">
                         <img src="/IMG/cuagach.jpg" alt="products image" class="products__img">
+                        <h3 class="products__name" data-lang-en="Dried Squid" data-lang-vi="Khô Mực">Khô Mực</h3>
+                        <span class="products__price">520.000đ</span>
 
-                        <h3 class="products__name" data-lang-en="Kho Ca Loc" data-lang-vi="Khô Mực">Khô Mực</h3>
-                        <h3 class="products__type">Loại: 500gram/bịch</h3>
-
-                        <h3 class="products__weight">500g/bịch</h3>
-
-                        <span class="products__price" data-lang-en="$13.78" data-lang-vi="520.000 VNĐ">520.000đ</span>
-
-                        <button class="products__button" data-name="Khô Mực" data-price="520.000" data-id="product-8"
-                            data-type="500g/bịch">
-                            <i class="fas fa-cart-plus"></i>
+                        <!-- Nút chọn mua -->
+                        <button class="products__button toggle-options" data-id="product-8">
+                            Chọn Mua
                         </button>
+
+                        <!-- Danh sách các tùy chọn -->
+                        <div class="products__options" style="display: none;">
+                            <div class="option" data-type="500g/bịch" data-price="520.000">
+                                <span>500g/bịch - 520.000đ</span>
+                                <button class="add-to-cart" data-type="500g/bịch" data-price="520.000">Thêm vào
+                                    giỏ</button>
+                            </div>
+                            <div class="option" data-type="300g/bịch" data-price="320.000">
+                                <span>300g/bịch - 320.000đ</span>
+                                <button class="add-to-cart" data-type="300g/bịch" data-price="320.000">Thêm vào
+                                    giỏ</button>
+                            </div>
+                            <div class="option" data-type="1kg" data-price="1.000.000">
+                                <span>1kg - 1.000.000đ</span>
+                                <button class="add-to-cart" data-type="1kg" data-price="1.000.000">Thêm vào giỏ</button>
+                            </div>
+                        </div>
                     </article>
+
+
+                    <div id="gram-modal" class="modal hidden">
+                        <div class="modal-content">
+                            <h3>Nhập số gram</h3>
+                            <p class="modal-product-name"></p>
+                            <input type="number" class="input-gram" placeholder="Số gram (VD: 500)">
+                            <button class="confirm-gram">Xác nhận</button>
+                            <button class="cancel-gram">Hủy</button>
+                        </div>
+                    </div>
+                    <div id="overlay" class="hidden"></div>
+
 
                 </div>
             </span>
         </section>
+
+
 
         <!--==================== RECENTLY ====================-->
         <section class="recently section" id="recently">
