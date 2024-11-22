@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
         let totalPrice = 0;
         orderSummary.innerHTML = cartData.map(item => {
             totalPrice += item.price * item.quantity;
-            return `${item.name} (${item.type}) - ${item.price.toFixed(2)} VND x${item.quantity}`;
+            return `${item.name} (${item.type}) - ${item.price.toFixed(2)}0VND x${item.quantity}`;
         }).join('<br>');
-        orderSummary.innerHTML += `<br><strong>Tổng cộng: ${totalPrice.toFixed(2)} VND</strong>`;
+        orderSummary.innerHTML += `<br><strong>Tổng cộng: ${totalPrice.toFixed(2)}0VND</strong>`;
     } else {
         orderSummary.textContent = 'Bạn chưa có sản phẩm nào trong giỏ hàng.';
     }
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         data.cartItems = cartData;
 
-        fetch('https://script.google.com/macros/s/AKfycbxXOkCE1tV44TVYrMhn2tBB1E3nB4Vru0ojaGXrg0djHidjvz6KmoQtDoNMRK2zkmlmrQ/exec', { 
+        fetch('https://script.google.com/macros/s/AKfycbz_XZVgnbs9ZVIc4oxxTwO66k7GER20C51I6hlXN4uP9mhtiaNwr2K2r7EjizYhBZXFdw/exec', { 
             method: 'POST',
             contentType: 'application/json',
             body: JSON.stringify(data)
