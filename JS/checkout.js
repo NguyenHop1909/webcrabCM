@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Dữ liệu các quận và phường
     const locations = {
-        "ho-chi-minh": {
+        "Hồ Chí Minh": {
             "Quận 1": ["Phường Bến Nghé", "Phường Bến Thành", "Phường Cầu Kho", "Phường Cầu Ông Lãnh", "Phường Cô Giang", "Phường Đa Kao", "Phường Nguyễn Cư Trinh", "Phường Nguyễn Thái Bình", "Phường Phạm Ngũ Lão", "Phường Tân Định"],
             "Quận 3": ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 5", "Phường Võ Thị Sáu", "Phường 9", "Phường 10", "Phường 11", "Phường 12", "Phường 13", "Phường 14"],
             "Quận 4": ["Phường 1", "Phường 2", "Phường 3", "Phường 4", "Phường 5", "Phường 6", "Phường 8", "Phường 9", "Phường 10", "Phường 12", "Phường 13", "Phường 14", "Phường 15", "Phường 16", "Phường 18"],
@@ -34,15 +34,16 @@ document.addEventListener('DOMContentLoaded', function () {
             "Huyện Cần Giờ": ["Thị trấn Cần Thạnh", "Xã An Thới Đông", "Xã Bình Khánh", "Xã Long Hòa", "Xã Lý Nhơn", "Xã Tam Thôn Hiệp", "Xã Thạnh An"],
             "Huyện Củ Chi": ["Thị trấn Củ Chi", "Xã An Nhơn Tây", "Xã An Phú", "Xã Bình Mỹ", "Xã Hòa Phú", "Xã Nhuận Đức", "Xã Phạm Văn Cội", "Xã Phú Hòa Đông", "Xã Phú Mỹ Hưng", "Xã Phước Hiệp", "Xã Phước Thạnh", "Xã Phước Vĩnh An", "Xã Tân An Hội", "Xã Tân Phú Trung", "Xã Tân Thạnh Đông", "Xã Tân Thạnh Tây", "Xã Tân Thông Hội", "Xã Thái Mỹ", "Xã Trung An", "Xã Trung Lập Hạ", "Xã Trung Lập Thượng"],
             "Huyện Hóc Môn": ["Thị trấn Hóc Môn", "Xã Bà Điểm", "Xã Đông Thạnh", "Xã Nhị Bình", "Xã Tân Hiệp", "Xã Tân Thới Nhì", "Xã Tân Xuân", "Xã Thới Tam Thôn", "Xã Trung Chánh", "Xã Xuân Thới Đông", "Xã Xuân Thới Sơn", "Xã Xuân Thới Thượng"],
-            "Huyện Nhà Bè": ["Thị trấn Nhà Bè", "Xã Hiệp Phước", "Xã Long Thới", "Xã Nhơn Đức", "Xã Phú Xuân", "Xã Phước Kiển", "Xã Phước Lộc"]
+            "Huyện Nhà Bè": ["Thị trấn Nhà Bè", "Xã Hiệp Phước", "Xã Long Thới", "Xã Nhơn Đức", "Xã Phú Xuân", "Xã Phước Kiển", "Xã Phước Lộc"],
+            "Thành phố Thủ Đức": ["Phường An Khánh", "Phường An Lợi Đông", "Phường An Phú", "Phường Bình Chiểu", "Phường Bình Thọ", "Phường Bình Trưng Đông", "Phường Bình Trưng Tây", "Phường Cát Lái", "Phường Hiệp Bình Chánh", "Phường Hiệp Bình Phước", "Phường Hiệp Phú", "Phường Linh Chiểu", "Phường Linh Đông", "Phường Linh Tây", "Phường Linh Trung", "Phường Linh Xuân", "Phường Long Bình", "Phường Long Phước", "Phường Long Thạnh Mỹ", "Phường Long Trường", "Phường Phú Hữu", "Phường Phước Bình", "Phường Phước Long A", "Phường Phước Long B", "Phường Tam Bình", "Phường Tam Phú", "Phường Tân Nhơn Phú A", "Phường Tân Nhơn Phú B", "Phường Tân Phú", "Phường Thảo Điền", "Phường Thạnh Mỹ Lợi", "Phường Thủ Thiêm", "Phường Trường Thạnh", "Phường Trường Thọ"]
         }
     };
 
     // Khi chọn tỉnh/thành
     citySelect.addEventListener("change", function () {
         const city = this.value;
-        districtSelect.innerHTML = '<option value="">Chọn quận</option>';
-        wardSelect.innerHTML = '<option value="">Chọn phường</option>';
+        districtSelect.innerHTML = '<option value="">Chọn Quận/Huyện</option>';
+        wardSelect.innerHTML = '<option value="">Chọn phường/xã</option>';
 
         if (locations[city]) {
             for (const district in locations[city]) {
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     districtSelect.addEventListener("change", function () {
         const city = citySelect.value;
         const district = this.value;
-        wardSelect.innerHTML = '<option value="">Chọn phường</option>';
+        wardSelect.innerHTML = '<option value="">Chọn phường/xã</option>';
 
         if (locations[city] && locations[city][district]) {
             locations[city][district].forEach(ward => {
@@ -106,11 +107,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         data.cartItems = cartData;
 
-        fetch('https://script.google.com/macros/s/AKfycbxFqz9iCTocSyq1vTWcwGmzYh_E9jrVos9TMVg4wqgMAwlk9EJ9ReJhFUMkoaf8VXPKDA/exec', {
+        fetch('https://script.google.com/macros/s/AKfycby3dPK5ZrwzuZJlpp-bwVJvf6uXT6enMgoVtIuCkBi3zgGepwrx1_2t-4PrIvrBueMHMQ/exec', {
             method: 'POST',
-            contentType: 'application/json',
-            body: JSON.stringify(data)
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+            mode: 'no-cors'
         })
+        
             .then(response => response.text())
             .then(result => {
                 const successModal = document.getElementById('order-success-modal');
