@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     citySelect.addEventListener("change", function () {
         const city = this.value;
         districtSelect.innerHTML = '<option value="">Chọn Quận/Huyện</option>';
-        wardSelect.innerHTML = '<option value="">Chọn phường/xã</option>';
+        wardSelect.innerHTML = '<option value="">Chọn Phường/Xã</option>';
 
         if (locations[city]) {
             for (const district in locations[city]) {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     districtSelect.addEventListener("change", function () {
         const city = citySelect.value;
         const district = this.value;
-        wardSelect.innerHTML = '<option value="">Chọn phường/xã</option>';
+        wardSelect.innerHTML = '<option value="">Chọn Phường/Xã</option>';
 
         if (locations[city] && locations[city][district]) {
             locations[city][district].forEach(ward => {
