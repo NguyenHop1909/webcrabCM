@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         data.cartItems = cartData;
 
-        fetch('https://script.google.com/macros/s/AKfycbz_XZVgnbs9ZVIc4oxxTwO66k7GER20C51I6hlXN4uP9mhtiaNwr2K2r7EjizYhBZXFdw/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbxFqz9iCTocSyq1vTWcwGmzYh_E9jrVos9TMVg4wqgMAwlk9EJ9ReJhFUMkoaf8VXPKDA/exec', {
             method: 'POST',
             contentType: 'application/json',
             body: JSON.stringify(data)
